@@ -1,5 +1,9 @@
 .app {
   border: 1px solid #333;
-  /* width: 80%; */
   margin: 0 auto;
+}
+
+.content {
+  padding: 1em;
+  background-color: #333;
 }
