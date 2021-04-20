@@ -1,7 +1,15 @@
-import './app.css';
+import React from 'react';
+import styles from './app.module.css';
+import Header from './components/header/header';
+import VideoList from './components/video_list/video_list';
 
-function App() {
-  return <h1>Hello React!</h1>;
-}
+const App = () => {
+  return (
+    <div className={styles.app}>
+      <Header />
+      <VideoList />
+    </div>
+  );
+};
 
 export default App;
