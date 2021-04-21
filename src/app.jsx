@@ -37,7 +37,7 @@ const App = () => {
       .then(result =>
         result.items.map(item => ({ ...item, id: item.id.videoId }))
       )
-      .then(soyoung => setVideos(soyoung))
+      .then(items => setVideos(items))
       .catch(error => console.log('error', error));
   };
 
