@@ -2,11 +2,10 @@ import React from 'react';
 import styles from './video_item.module.css';
 
 const VideoItem = ({ video: { snippet } }) => {
-  console.log(snippet);
   return (
     <li className={styles.videoItem}>
       <img
-        src={snippet.thumbnails.standard.url}
+        src={snippet.thumbnails.high.url}
         alt="thumbnail"
         title={snippet.title}
         className={styles.thumbnail}
