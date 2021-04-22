@@ -7,6 +7,7 @@
 
 .videoItem.list {
   width: 100%;
+  display: flex;
 }
 
 .videoItem.grid {
@@ -49,4 +50,22 @@
 .channel {
   font-size: 1rem;
   transition: all 200ms;
+}
+
+/* List */
+.videoItem.list .thumbnail {
+  width: 40%;
+  margin-right: 0.5em;
+}
+
+.videoItem.list .metadata {
+  width: 60%;
+}
+
+.videoItem.list .title {
+  font-size: 1em;
+}
+
+.videoItem.list .channel {
+  font-size: 0.8em;
 }

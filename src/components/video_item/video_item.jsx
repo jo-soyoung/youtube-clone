@@ -15,10 +15,12 @@ const VideoItem = ({ video, video: { snippet }, onSelect, display }) => {
         title={snippet.title}
         className={styles.thumbnail}
       />
-      <h2 className={styles.title} title={snippet.title}>
-        {snippet.title}
-      </h2>
-      <span className={styles.channel}>{snippet.channelTitle}</span>
+      <div className="metadata">
+        <h2 className={styles.title} title={snippet.title}>
+          {snippet.title}
+        </h2>
+        <span className={styles.channel}>{snippet.channelTitle}</span>
+      </div>
     </li>
   );
 };
