@@ -1,0 +1,25 @@
+.video {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.detail {
+  padding: 1em;
+  background-color: #fff;
+}
+
+.detail > * {
+  display: block;
+}
+
+.detail .title {
+  margin-bottom: 0.2em;
+}
+
+.detail .channel {
+  margin-bottom: 1em;
+}
+
+.detail .description {
+  white-space: pre-wrap;
+}

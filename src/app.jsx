@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styles from './app.module.css';
 import Header from './components/header/header';
 import VideoList from './components/video_list/video_list';
+import SelectedVideo from './components/selected_video/selected_video';
 
 const App = () => {
   const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const popularVideos = () => {
     var requestOptions = {
@@ -41,12 +43,29 @@ const App = () => {
       .catch(error => console.log('error', error));
   };
 
+  const onSelect = video => {
+    setSelectedVideo(video);
+  };
+
   return (
     <div className={styles.app}>
       <Header onSearch={onSearch} popularVideos={popularVideos} />
-      <div className={styles.content}>
-        <VideoList videos={videos} />
-      </div>
+
+      <section className={styles.content}>
+        {selectedVideo && (
+          <div className={styles.selectedVideo}>
+            <SelectedVideo selectedVideo={selectedVideo} />
+          </div>
+        )}
+
+        <div className={styles.videoList}>
+          <VideoList
+            onSelect={onSelect}
+            videos={videos}
+            display={selectedVideo ? 'list' : 'grid'}
+          />
+        </div>
+      </section>
     </div>
   );
 };

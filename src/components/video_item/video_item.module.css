@@ -1,9 +1,16 @@
 .videoItem {
-  width: 25%;
   padding: 0.5em;
   background-color: #fff;
   cursor: pointer;
   transition: all 200ms;
+}
+
+.videoItem.list {
+  width: 100%;
+}
+
+.videoItem.grid {
+  width: 25%;
 }
 
 .videoItem:hover {

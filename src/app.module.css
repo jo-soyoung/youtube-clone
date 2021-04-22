@@ -4,6 +4,18 @@
 }
 
 .content {
+  display: flex;
   padding: 1em;
   background-color: #333;
+}
+
+.selectedVideo {
+  padding-right: 1em;
+  width: 70%;
+  flex-grow: 7;
+}
+
+.videoList {
+  width: 30%;
+  flex-grow: 3;
 }
