@@ -21,6 +21,8 @@ const App = () => {
       .then(response => response.json())
       .then(result => setVideos(result.items))
       .catch(error => console.log('error', error));
+
+    setSelectedVideo(null);
   };
 
   useEffect(popularVideos, []);
@@ -41,6 +43,8 @@ const App = () => {
       )
       .then(items => setVideos(items))
       .catch(error => console.log('error', error));
+
+    setSelectedVideo(null);
   };
 
   const onSelect = video => {
