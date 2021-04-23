@@ -3,17 +3,17 @@ import styles from './selected_video.module.css';
 
 const SelectedVideo = ({ selectedVideo }) => {
   return (
-    <>
+    <section className={styles.selectedVideo}>
       <iframe
+        className={styles.video}
         id="ytplayer"
         type="text/html"
-        width="720"
-        height="405"
+        width="100%"
         src={`https://www.youtube.com/embed/${selectedVideo.id}?modestbranding=1`}
-        frameborder="0"
-        allowfullscreen
-        className={styles.video}
-      />
+        frameBorder="0"
+        title="youtube video player"
+        allowFullScreen
+      ></iframe>
 
       <div className={styles.detail}>
         <h2 className={styles.title}>{selectedVideo.snippet.title}</h2>
@@ -24,7 +24,7 @@ const SelectedVideo = ({ selectedVideo }) => {
           {selectedVideo.snippet.description}
         </pre>
       </div>
-    </>
+    </section>
   );
 };
 

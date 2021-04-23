@@ -69,3 +69,17 @@
 .videoItem.list .channel {
   font-size: 0.8em;
 }
+
+/* Responsive - Tablet */
+@media screen (max-width: 1023px) {
+  .videoItem.grid {
+    width: 50%;
+  }
+}
+
+/* Responsive - Smartphone */
+@media screen and (max-width: 767px) {
+  .videoItem.grid {
+    width: 100%;
+  }
+}

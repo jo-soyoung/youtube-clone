@@ -1,6 +1,7 @@
 .video {
   width: 100%;
   margin-bottom: 0.5em;
+  height: 500px;
 }
 
 .detail {
@@ -22,4 +23,11 @@
 
 .detail .description {
   white-space: pre-wrap;
+}
+
+/* Responsive - Smartphone */
+@media screen and (max-width: 767px) {
+  .video {
+    height: 300px;
+  }
 }

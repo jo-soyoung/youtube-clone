@@ -59,3 +59,59 @@
 .searchbar button img {
   width: 30%;
 }
+
+/* Responsive - Tablet */
+@media screen and (max-width: 1023px) {
+  .searchbar {
+    width: 50%;
+  }
+
+  .searchbar input {
+    flex-basis: 100%;
+  }
+
+  .searchbar button {
+    flex-basis: 10%;
+  }
+
+  .searchbar button img {
+    width: 50%;
+  }
+}
+
+/* Responsive - Smartphone */
+@media screen and (max-width: 767px) {
+  .logo img {
+    width: 30%;
+    margin-right: 0.2em;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .searchbar {
+    width: 80%;
+  }
+
+  .searchbar input {
+    flex-basis: 100%;
+    max-width: 85%;
+  }
+
+  .searchbar button {
+    flex-basis: 10%;
+    min-width: 15%;
+  }
+}
+
+/* Responsive - iPhone SE */
+@media screen and (max-width: 320px) {
+  .searchbar {
+    width: 60%;
+  }
+
+  .searchbar button img {
+    width: 100%;
+  }
+}

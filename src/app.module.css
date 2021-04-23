@@ -10,12 +10,28 @@
 }
 
 .selectedVideo {
-  padding-right: 1em;
   width: 70%;
+  padding-right: 1em;
   flex-grow: 7;
 }
 
 .videoList {
   width: 30%;
   flex-grow: 3;
+}
+
+/* Responsive - Tablet, Smartphone */
+@media screen and (max-width: 1023px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .selectedVideo {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .videoList {
+    width: 100%;
+  }
 }

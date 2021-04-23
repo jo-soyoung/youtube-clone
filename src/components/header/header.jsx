@@ -12,7 +12,7 @@ const Header = ({ onSearch, popularVideos }) => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo} onClick={popularVideos}>
+      <div className={styles.logo} onClick={popularVideos} title="YouTube Home">
         <img src="./images/logo.png" alt="logo" />
         <h1>YouTube</h1>
       </div>
