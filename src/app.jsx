@@ -4,44 +4,25 @@ import Header from './components/header/header';
 import VideoList from './components/video_list/video_list';
 import SelectedVideo from './components/selected_video/selected_video';
 
-const App = () => {
+const App = ({ youtube }) => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const popularVideos = () => {
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
-
-    fetch(
-      'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyCN3U56WnADnsx_XZrWNxwWK8Pjua4teWQ',
-      requestOptions
-    )
-      .then(response => response.json())
-      .then(result => setVideos(result.items))
+    youtube
+      .popularVideos()
+      .then(videos => setVideos(videos))
       .catch(error => console.log('error', error));
 
     setSelectedVideo(null);
   };
 
-  useEffect(popularVideos, []);
+  useEffect(popularVideos, [youtube]);
 
   const onSearch = query => {
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
-
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyCN3U56WnADnsx_XZrWNxwWK8Pjua4teWQ`,
-      requestOptions
-    )
-      .then(response => response.json())
-      .then(result =>
-        result.items.map(item => ({ ...item, id: item.id.videoId }))
-      )
-      .then(items => setVideos(items))
+    youtube
+      .onSearch(query)
+      .then(videos => setVideos(videos))
       .catch(error => console.log('error', error));
 
     setSelectedVideo(null);
